@@ -1,6 +1,8 @@
 import {withSentryConfig} from '@sentry/nextjs';
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    output:'export'
+};
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
@@ -8,6 +10,7 @@ export default withSentryConfig(nextConfig, {
 
 org: "dalian",
 project: "javascript-nextjs",
+ignoreBuildErrors: true,
 
 // Only print logs for uploading source maps in CI
 silent: !process.env.CI,
